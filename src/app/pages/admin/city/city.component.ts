@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-city',
@@ -41,7 +41,9 @@ export class CityComponent implements OnInit {
   }
 
   addNewCity() {
+    console.log('Trying to add cityyy...');
     if (this.newCityName.trim()) {
+      console.log('2 - Trying to add cityyy...');
       const newCity = {
         cityId: this.generateNewCityId(),
         cityName: this.newCityName,

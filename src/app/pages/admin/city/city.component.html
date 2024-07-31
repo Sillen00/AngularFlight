@@ -1,8 +1,10 @@
 <div>
   <div>
-    <label for="newCity">New City</label>
-    <input type="text" id="newCity" [(ngModel)]="newCityName" />
-    <button (click)="addNewCity()">Add New City</button>
+    <form action="#">
+      <label for="newCity">New City</label> <br />
+      <input type="text" id="newCity" ngModel name="newCityName" />
+      <button (click)="addNewCity()">Add New City</button>
+    </form>
   </div>
 
   <div>
