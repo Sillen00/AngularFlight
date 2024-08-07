@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class CityComponent implements OnInit {
   cityList: { cityId: number; cityName: string }[] = [];
-  newCityName: string = '';
+  newCityName: string = 'dd';
 
   constructor(private http: HttpClient) {}
 

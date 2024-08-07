@@ -6,7 +6,7 @@
         type="text"
         id="newCityNameInput"
         [(ngModel)]="newCityName"
-        name="newCityNameInput"
+        [ngModelOptions]="{ standalone: true }"
       />
       <button (click)="addNewCity()">Add New City</button>
     </form>
