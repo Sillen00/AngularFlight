@@ -2,12 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-city',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule,
+  ],
   templateUrl: './city.component.html',
   styleUrls: ['./city.component.scss'],
 })
@@ -41,16 +47,16 @@ export class CityComponent implements OnInit {
   }
 
   addNewCity() {
-    console.log('Trying to add cityyy...');
-    if (this.newCityName.trim()) {
-      console.log('2 - Trying to add cityyy...');
-      const newCity = {
-        cityId: this.generateNewCityId(),
-        cityName: this.newCityName,
-      };
-      this.cityList.push(newCity);
-      this.newCityName = ''; // Clear the input field
-    }
+    console.log('Trying to add cityyy...:', this.newCityName);
+    // if (this.newCityName.trim()) {
+    //   console.log('2 - Trying to add cityyy...', this.newCityName);
+    //   const newCity = {
+    //     cityId: this.generateNewCityId(),
+    //     cityName: this.newCityName,
+    //   };
+    //   this.cityList.push(newCity);
+    //   this.newCityName = ''; // Clear the input field
+    // }
   }
 
   generateNewCityId(): number {

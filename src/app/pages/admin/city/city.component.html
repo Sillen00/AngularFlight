@@ -1,8 +1,8 @@
 <div>
   <div>
     <form action="#">
-      <label for="newCity">New City</label> <br />
-      <input type="text" id="newCity" ngModel name="newCityName" />
+      <label for="newCityName">New City</label> <br />
+      <input type="text" id="newCityName" [(ngModel)]="newCityName" name="newCityName" />
       <button (click)="addNewCity()">Add New City</button>
     </form>
   </div>
