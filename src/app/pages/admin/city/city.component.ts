@@ -3,17 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+// import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-city',
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    HttpClientModule,
-    RouterModule,
-  ],
+  imports: [CommonModule, FormsModule, HttpClientModule],
   templateUrl: './city.component.html',
   styleUrls: ['./city.component.scss'],
 })
@@ -48,15 +43,15 @@ export class CityComponent implements OnInit {
 
   addNewCity() {
     console.log('Trying to add cityyy...:', this.newCityName);
-    // if (this.newCityName.trim()) {
-    //   console.log('2 - Trying to add cityyy...', this.newCityName);
-    //   const newCity = {
-    //     cityId: this.generateNewCityId(),
-    //     cityName: this.newCityName,
-    //   };
-    //   this.cityList.push(newCity);
-    //   this.newCityName = ''; // Clear the input field
-    // }
+    if (this.newCityName.trim()) {
+      console.log('2 - Trying to add cityyy...', this.newCityName);
+      const newCity = {
+        cityId: this.generateNewCityId(),
+        cityName: this.newCityName,
+      };
+      this.cityList.push(newCity);
+      this.newCityName = ''; // Clear the input field
+    }
   }
 
   generateNewCityId(): number {
